@@ -1,0 +1,69 @@
+=bg_gradient($color1, $color2, $pos1: left top, $pos2: left bottom, $type: linear, $extra: "")
+  background: -moz-linear-gradient(top, $color1, $color2) #{$extra}
+  background: -webkit-gradient($type, $pos1, $pos2, from($color1), to($color2)) #{$extra}
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$color1}, endColorstr=#{$color2})"
+
+=border_radius($top_left, $top_right: $top_left, $bottom_right: $top_left, $bottom_left: $top_left)
+  @if unitless($top_left)
+    $top_left: 1px * $top_left
+  @if unitless($top_right)
+    $top_right: 1px * $top_right
+  @if unitless($bottom_right)
+    $bottom_right: 1px * $bottom_right
+  @if unitless($bottom_left)
+    $bottom_left: 1px * $bottom_left
+  @if $top_right == $top_left and $bottom_right == $top_left and $bottom_left == $top_left
+    -moz-border-radius: $top_left
+    -o-border-radius: $top_left
+    -webkit-border-radius: $top_left
+    border-radius: $top_left
+  @else
+    -moz-border-radius-topleft: $top_left
+    -moz-border-radius-topright: $top_right
+    -moz-border-radius-bottomright: $bottom_right
+    -moz-border-radius-bottomleft: $bottom_left
+    -o-border-radius-topleft: $top_left
+    -o-border-radius-topright: $top_right
+    -o-border-radius-bottomright: $bottom_right
+    -o-border-radius-bottomleft: $bottom_left
+    -webkit-border-top-left-radius: $top_left
+    -webkit-border-top-right-radius: $top_right
+    -webkit-border-bottom-right-radius: $bottom_right
+    -webkit-border-bottom-left-radius: $bottom_left
+    border-top-left-radius: $top_left
+    border-top-right-radius: $top_right
+    border-bottom-right-radius: $bottom_right
+    border-bottom-left-radius: $bottom_left
+
+=box_shadow($value)
+  -moz-box-shadow: $value
+  -webkit-box-shadow: $value
+  box-shadow: $value
+
+=box_sizing($value)
+  -moz-box-sizing: $value
+  -webkit-box-sizing: $value
+  box-sizing: $value
+
+=opacity($opacity)
+  -moz-opacity: $opacity
+  -webkit-opacity: $opacity
+  opacity: $opacity
+  filter: alpha(opacity = $opacity * 100)
+
+=transition($t1, $t2: "", $t3: "")
+  @if $t3 != ""
+    -moz-transition: $t1, $t2, $t3
+    -o-transition: $t1, $t2, $t3
+    -webkit-transition: $t1, $t2, $t3
+    transition: $t1, $t2, $t3
+  @else if $t2 != ""
+    -moz-transition: $t1, $t2
+    -o-transition: $t1, $t2
+    -webkit-transition: $t1, $t2
+    transition: $t1, $t2
+  @else
+    -moz-transition: $t1
+    -o-transition: $t1
+    -webkit-transition: $t1
+    transition: $t1
