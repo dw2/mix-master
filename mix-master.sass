@@ -51,8 +51,46 @@
   opacity: $opacity
   filter: alpha(opacity = $opacity * 100)
 
-=transition($t1, $t2: "", $t3: "")
-  @if $t3 != ""
+=selection($background, $color: "", $nested: 0)
+  @if $nested == 0
+    ::-moz-selection
+      background: $background
+      @if $color != ""
+        color: $color
+    ::-webkit-selection
+      background: $background
+      @if $color != ""
+        color: $color
+    ::selection
+      background: $background
+      @if $color != ""
+        color: $color
+  @else
+    &::-moz-selection
+      background: $background
+      @if $color != ""
+        color: $color
+    &::-webkit-selection
+      background: $background
+      @if $color != ""
+        color: $color
+    &::selection
+      background: $background
+      @if $color != ""
+        color: $color
+
+=transition($t1, $t2: "", $t3: "", $t4: "", $t5: "")
+  @if $t5 != ""
+    -moz-transition: $t1, $t2, $t3, $t4, $t5
+    -o-transition: $t1, $t2, $t3, $t4, $t5
+    -webkit-transition: $t1, $t2, $t3, $t4, $t5
+    transition: $t1, $t2, $t3, $t4, $t5
+  @else if $t4 != ""
+    -moz-transition: $t1, $t2, $t3, $t4
+    -o-transition: $t1, $t2, $t3, $t4
+    -webkit-transition: $t1, $t2, $t3, $t4
+    transition: $t1, $t2, $t3, $t4
+  @else if $t3 != ""
     -moz-transition: $t1, $t2, $t3
     -o-transition: $t1, $t2, $t3
     -webkit-transition: $t1, $t2, $t3
