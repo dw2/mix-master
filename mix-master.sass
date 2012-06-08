@@ -40,10 +40,19 @@
     border-bottom-right-radius: $bottom_right
     border-bottom-left-radius: $bottom_left
 
-=box_shadow($value)
-  -moz-box-shadow: $value
-  -webkit-box-shadow: $value
-  box-shadow: $value
+=box_shadow($v1, $v2: "", $v3: "")
+  @if $v3 != ""
+    -moz-box-shadow: $v1, $v2, $v3
+    -webkit-box-shadow: $v1, $v2, $v3
+    box-shadow: $v1, $v2, $v3
+  @else if $v2 != ""
+    -moz-box-shadow: $v1, $v2
+    -webkit-box-shadow: $v1, $v2
+    box-shadow: $v1, $v2
+  @else
+    -moz-box-shadow: $v1
+    -webkit-box-shadow: $v1
+    box-shadow: $v1
 
 =box_sizing($value)
   -moz-box-sizing: $value
