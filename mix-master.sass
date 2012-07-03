@@ -8,6 +8,12 @@
   background: -webkit-gradient($type, $pos1, $pos2, from($color1), to($color2)) #{$extra}
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$color1}, endColorstr=#{$color2})"
 
+=border_image($value)
+  -moz-border-image: $value
+  -o-border-image: $value
+  -webkit-border-image: $value
+  border-image: $value
+
 =border_radius($top_left, $top_right: $top_left, $bottom_right: $top_left, $bottom_left: $top_left)
   @if unitless($top_left)
     $top_left: 1px * $top_left
