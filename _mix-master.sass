@@ -126,7 +126,10 @@
   -webkit-touch-callout: $value
   -webkit-user-select: $value
   -khtml-user-select: $value
-  -moz-user-select: $value
+  @if $value == 'none'
+    -moz-user-select: -moz-none
+  @else
+    -moz-user-select: $value
   -ms-user-select: $value
   user-select: $value
 
