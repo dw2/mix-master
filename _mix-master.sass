@@ -166,6 +166,20 @@
       @if $color != ""
         color: $color
 
+=transform($val)
+  -webkit-transform: $val
+  -moz-transform: $val
+  -o-transform: $val
+  -ms-transform: $val
+  transform: $val
+
+=transform_origin($val)
+  -webkit-transform-origin: $val
+  -moz-transform-origin: $val
+  -o-transform-origin: $val
+  -ms-transform-origin: $val
+  transform-origin: $val
+
 =transition($t1, $t2: "", $t3: "", $t4: "", $t5: "")
   @if $t5 != ""
     -moz-transition: $t1, $t2, $t3, $t4, $t5
