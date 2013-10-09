@@ -1,0 +1,149 @@
+animation()
+    -moz-animation: arguments
+    -webkit-animation: arguments
+    animation: arguments
+
+bg_size()
+    -moz-background-size: arguments
+    -webkit-background-size: arguments
+    background-size: arguments
+
+bg_gradient(c1, c2)
+    background-image: linear-gradient(top, c1, c2)
+    background-image: -o-linear-gradient(top, c1, c2)
+    background-image: -moz-linear-gradient(top, c1, c2)
+    background-image: -webkit-linear-gradient(top, c1, c2)
+    background-image: -ms-linear-gradient(top, c1, c2)
+    if support-for-ie
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=" + c1 + ", endColorstr=" + c2 + ")"
+
+border_image()
+    -moz-border-image: arguments
+    -o-border-image: arguments
+    -webkit-border-image: arguments
+    border-image: arguments
+
+border_radius(tl, tr=tl, br=tl, bl=tl)
+    if tr == tl and br == tl and bl == tl
+        -moz-border-radius: tl
+        -o-border-radius: tl
+        -webkit-border-radius: tl
+        border-radius: tl
+    else
+        -moz-border-radius-topleft: tl
+        -moz-border-radius-topright: tr
+        -moz-border-radius-bottomright: br
+        -moz-border-radius-bottomleft: bl
+        -o-border-radius-topleft: tl
+        -o-border-radius-topright: tr
+        -o-border-radius-bottomright: br
+        -o-border-radius-bottomleft: bl
+        -webkit-border-top-left-radius: tl
+        -webkit-border-top-right-radius: tr
+        -webkit-border-bottom-right-radius: br
+        -webkit-border-bottom-left-radius: bl
+        border-top-left-radius: tl
+        border-top-right-radius: tr
+        border-bottom-right-radius: br
+        border-bottom-left-radius: bl
+
+box_shadow()
+    -moz-box-shadow: arguments
+    -webkit-box-shadow: arguments
+    box-shadow: arguments
+
+box_sizing()
+    -moz-box-sizing: arguments
+    -webkit-box-sizing: arguments
+    box-sizing: arguments
+
+column_count()
+    -moz-column-count: arguments
+    -webkit-column-count: arguments
+    column-count: arguments
+
+column_fill()
+    -moz-column-fill: arguments
+    -webkit-column-fill: arguments
+    column-fill: arguments
+
+column_gap()
+    -moz-column-gap: arguments
+    -webkit-column-gap: arguments
+    column-gap: arguments
+
+column_span()
+    -moz-column-span: arguments
+    -webkit-column-span: arguments
+    column-span: arguments
+
+column_width()
+    -moz-column-width: arguments
+    -webkit-column-width: arguments
+    column-width: arguments
+
+column_rule()
+    -moz-column-rule: arguments
+    -webkit-column-rule: arguments
+    column-rule: arguments
+
+cursor_grab
+    cursor: all-scroll
+    cursor: -moz-grab
+    cursor: -webkit-grab
+    cursor: grab
+
+opacity(o)
+    -khtml-opacity: o
+    -moz-opacity: o
+    opacity: o
+    if support-for-ie
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='" + round(o * 100) + "')"
+        filter: unquote('alpha(opacity=' + round(o * 100) + ')')
+
+select()
+    -webkit-touch-callout: arguments
+    -webkit-user-select: arguments
+    -khtml-user-select: arguments
+    if arguments == 'none'
+        -moz-user-select: -moz-none
+    else
+        -moz-user-select: arguments
+    -ms-user-select: arguments
+    user-select: arguments
+
+selection(bg, c='')
+    ::-moz-selection
+        background: bg
+        if c != ''
+            color: c
+    ::-webkit-selection
+        background: bg
+        if c != ''
+            color: c
+    ::selection
+        background: bg
+        if c != ''
+            color: c
+
+transform()
+    -webkit-transform: arguments
+    -moz-transform: arguments
+    -o-transform: arguments
+    -ms-transform: arguments
+    transform: arguments
+
+transform_origin()
+    -webkit-transform-origin: arguments
+    -moz-transform-origin: arguments
+    -o-transform-origin: arguments
+    -ms-transform-origin: arguments
+    transform-origin: arguments
+
+transition()
+    -moz-transition: arguments
+    -o-transition: arguments
+    -webkit-transition: arguments
+    transition: arguments
+
+// MIT License, Douglas Waltman II, http://dougwaltman.com
