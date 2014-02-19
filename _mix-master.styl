@@ -115,6 +115,26 @@ opacity(o)
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='" + round(o * 100) + "')"
         filter: unquote('alpha(opacity=' + round(o * 100) + ')')
 
+placeholder_color(color, nested=true)
+    if nested
+        &::-webkit-input-placeholder
+            color: color
+        &:-moz-placeholder
+            color: color
+        &::-moz-placeholder
+            color: color
+        &:-ms-input-placeholder
+            color: color
+    else
+        ::-webkit-input-placeholder
+            color: color
+        #{':'}-moz-placeholder
+            color: color
+        ::-moz-placeholder
+            color: color
+        #{':'}-ms-input-placeholder
+            color: color
+
 select()
     -webkit-touch-callout: arguments
     -webkit-user-select: arguments
