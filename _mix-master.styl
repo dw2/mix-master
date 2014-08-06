@@ -101,16 +101,20 @@ cursor_grab()
     cursor: grab
 
 filter()
-  -moz-filter: arguments
-  -ms-filter: arguments
-  -o-filter: arguments
-  -webkit-filter: arguments
-  filter: arguments
+    -moz-filter: arguments
+    -ms-filter: arguments
+    -o-filter: arguments
+    -webkit-filter: arguments
+    filter: arguments
 
 grayscale()
-  -webkit-filter: grayscale(1)
-  filter: url(filters.svg#grayscale)
-  filter: gray
+    -webkit-filter: grayscale(1)
+    filter: url(filters.svg#grayscale)
+    filter: gray
+
+image_optimize()
+    image-rendering: -webkit-optimize-contrast
+    image-rendering: optimizeQuality
 
 opacity(o)
     -khtml-opacity: o
