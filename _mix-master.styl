@@ -94,11 +94,17 @@ column_rule()
     -webkit-column-rule: arguments
     column-rule: arguments
 
-cursor_grab()
-    cursor: all-scroll
+cursor_grab(default=all-scroll)
+    cursor: default
     cursor: -moz-grab
     cursor: -webkit-grab
     cursor: grab
+
+cursor_grabingb(default=all-scroll)
+    cursor: default
+    cursor: -moz-grabbing
+    cursor: -webkit-grabbing
+    cursor: grabbing
 
 filter()
     -moz-filter: arguments

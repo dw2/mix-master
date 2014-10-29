@@ -107,18 +107,17 @@
     -webkit-column-rule: $value
     column-rule: $value
 
-=cursor_grab
-    cursor: all-scroll
+=cursor_grab($default: all-scroll)
+    cursor: $default
     cursor: -moz-grab
     cursor: -webkit-grab
     cursor: grab
 
-=filter($value)
-    -moz-filter: $value
-    -ms-filter: $value
-    -o-filter: $value
-    -webkit-filter: $value
-    filter: $value
+=cursor_grabbing($default: all-scroll)
+    cursor: $default
+    cursor: -moz-grabbing
+    cursor: -webkit-grabbing
+    cursor: grabbing
 
 =grayscale
     -webkit-filter: grayscale(1)
