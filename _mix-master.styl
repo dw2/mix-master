@@ -9,11 +9,11 @@ bg_size()
     background-size: arguments
 
 bg_gradient(c1, c2)
-    background-image: linear-gradient(top, c1, c2)
-    background-image: -o-linear-gradient(top, c1, c2)
-    background-image: -moz-linear-gradient(top, c1, c2)
-    background-image: -webkit-linear-gradient(top, c1, c2)
-    background-image: -ms-linear-gradient(top, c1, c2)
+    background-image: -o-linear-gradient(to bottom, c1, c2)
+    background-image: -moz-linear-gradient(to bottom, c1, c2)
+    background-image: -webkit-linear-gradient(to bottom, c1, c2)
+    background-image: -ms-linear-gradient(to bottom, c1, c2)
+    background-image: linear-gradient(to bottom, c1, c2)
     if support-for-ie
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=" + c1 + ", endColorstr=" + c2 + ")"
 

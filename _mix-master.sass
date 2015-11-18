@@ -8,10 +8,13 @@
     -webkit-background-size: $value
     background-size: $value
 
-=bg_gradient($color1, $color2, $pos1: left top, $pos2: left bottom, $type: linear, $extra: "")
-    background: -moz-linear-gradient(top, $color1, $color2) #{$extra}
-    background: -webkit-gradient($type, $pos1, $pos2, from($color1), to($color2)) #{$extra}
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$color1}, endColorstr=#{$color2})"
+=bg_gradient($c1, $c2)
+    background-image: -o-linear-gradient(to bottom, $c1, $c2)
+    background-image: -moz-linear-gradient(to bottom, $c1, $c2)
+    background-image: -webkit-linear-gradient(to bottom, $c1, $c2)
+    background-image: -ms-linear-gradient(to bottom, $c1, $c2)
+    background-image: linear-gradient(to bottom, $c1, $c2)
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$c1}, endColorstr=#{$c2})"
 
 =border_image($value)
     -moz-border-image: $value
